@@ -1,0 +1,19 @@
+# readline(3) config file.
+$include /etc/inputrc
+
+# usually bound to unusable C-s (pauses terminal output, cancelable only by
+# C-q)
+C-t: forward-search-history
+
+# usuall bound to M-TAB (which is grabbed by most window managers)
+C-f: dynamic-complete-history
+
+# don't match hidden files when performing tab completion, except when a
+# leading '.' is used
+set match-hidden-files Off
+
+# never ring the terminal bell
+set bell-style none
+
+# hit the <Tab> key ONCE to produce a list of all possible completions
+set show-all-if-ambiguous on

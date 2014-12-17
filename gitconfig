@@ -1,0 +1,47 @@
+# Git config file. See http://git-scm.com/
+[user]
+	email = haircut@gmail.com
+	name = Adam Monsen
+[color]
+	# provides handy visual cues
+	ui = auto
+[merge]
+	log = true
+	renameLimit = 2000
+	defaultToUpstream = true
+[core]
+	# warning: very platform-specific!
+	autocrlf = input
+	pager = less --ignore-case
+	attributesfile = ~/.gitattributes
+	excludesfile = ~/.gitignore
+[alias]
+	co = checkout
+	# svn-like, plus shows diff in editor
+	ci = commit -v
+	# svn-like status command
+	st = status
+	cpx = cherry-pick -x
+	clog = log --decorate --oneline --graph --all
+	# detailed log command I use often
+	plog = log --decorate --find-copies-harder -c -C -M -p
+	nlog = log --decorate --find-copies-harder -C -M --name-status
+	# summary log command I use often
+	slog = log --decorate --find-copies-harder -C -M --stat
+	# great for avoiding unexpected merges
+	pf = pull --ff-only
+	# useful for rebasing often (supports a clean workflow)
+	pr = pull --rebase
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[diff "zip"]
+	textconv = unzip -c -a
+[push]
+	# only push upstream branch matching currently checked-out branch
+	default = upstream
+[column]
+        ui = auto
+[instaweb]
+	browser = google-chrome
