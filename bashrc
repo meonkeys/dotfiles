@@ -65,34 +65,11 @@ alias s='cd ..'
 # make a temp dir, then immediately cd into it
 alias mktd='tdir=`mktemp -d` && cd $tdir'
 
-# ampline makes it easy to reuse output of previous commands. Built for
-# interactivity rather than script-ability.
-# See https://github.com/DTrejo/ampline
-alias l='CLICOLOR_FORCE=1 amp -p "(.*)" ls -1'
-alias gs='amp -p ".{3}(.*)$" git status -bs'
-alias ga='amp git add'
-alias gr='amp git reset'
-alias grm='amp git rm'
-alias gco='amp git checkout'
-alias gd='amp git diff'
-alias av='amp vim'
-alias s3ls='amp -p "(s3.*)$" s3cmd ls'
-alias s3a='amp s3cmd'
-
 # echo public IP address
 # see http://unix.stackexchange.com/questions/22615/how-can-i-get-my-external-ip-address-in-bash/81699#81699
 # alternative 1: curl http://canhazip.com
 # alternative 2: curl http://icanhazip.com
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
-
-# grab file from S3 and open in editor. mneumonic: "s3 vim"
-function s3v() {
-  tmpfile=`mktemp --tmpdir s3v.XXXXXXXXXX.txt`
-  remoteFile=$(amp $*)
-  s3cmd get --force "$remoteFile" $tmpfile
-  echo $remoteFile saved to $tmpfile. Opening in ${EDITOR}...
-  $EDITOR "$tmpfile"
-}
 
 # list contents right after changing directories
 cd() {
