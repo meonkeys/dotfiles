@@ -130,7 +130,6 @@ shopt -s cdspell
 # good for double-checking history substitutions
 shopt -s histverify
 
-# Grep for running processes, show full command lines. mneumonic: pgrep wide
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*|screen*)
