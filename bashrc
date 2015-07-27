@@ -121,6 +121,12 @@ function vw() {
   vim $(type -P "$@")
 }
 
+# Serve all files in current directory tree via HTTP.
+# See also: https://gist.github.com/meonkeys/6eaa7d87c9cea9ace557
+function http() {
+  python -m SimpleHTTPServer 8000
+}
+
 # Enable tab completion for SSH hosts in Bash history
 # from http://www.commandlinefu.com/commands/view/8562/enable-tab-completion-for-known-ssh-hosts
 complete -W "$(echo $(grep '^ssh ' ~/.bash_history | sort -u | sed 's/^ssh //'))" ssh
