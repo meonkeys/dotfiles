@@ -40,10 +40,6 @@ path_prepend () {
 path_prepend /usr/sbin
 path_prepend $HOME/bin
 
-# remove stuff from path
-PATH=${PATH/\/usr\/kerberos\/bin:/}
-#PATH=`echo $PATH | sed -e 's#/usr/kerberos/bin:\?##'`
-
 unset path_prepend
 
 # Only do the following during an interactive prompt.
@@ -57,9 +53,7 @@ unset path_prepend
 stty start undef stop undef
 
 alias f="find . | grep"
-alias indent='indent -bli0 -nut -i4'
 alias ls='ls -F --col'
-alias ll='ls -l'
 # this is DEFINITELY my most often-used command
 alias s='cd ..'
 # make a temp dir, then immediately cd into it
