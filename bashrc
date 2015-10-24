@@ -55,7 +55,7 @@ stty start undef stop undef
 alias f="find . | grep"
 alias ls='ls -F --col'
 # this is DEFINITELY my most often-used command
-alias s='cd ..'
+alias s='cd ..' # mnemonic: "super"
 # make a temp dir, then immediately cd into it
 alias mktd='tdir=`mktemp -d` && cd $tdir'
 
@@ -69,7 +69,7 @@ alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 cd() {
   if [[ "$1" ]]
   then builtin cd "$1" && ls
-  else builtin cd && ls
+  else builtin cd && ls # for cd'ing into home directory
   fi
 }
 
