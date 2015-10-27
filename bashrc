@@ -80,7 +80,8 @@ mkcd() {
   fi
 }
 
-# vw: vim a file on PATH (with TAB-completion). mnemonic: vim `whereis X`
+# vw: vim a file on PATH (with TAB-completion). mnemonic: vim which or vim
+# whereis. I think the actual command used to be something like vim `whereis X`
 function _vw_comp() {
   local cur
   cur=$(_get_cword)
