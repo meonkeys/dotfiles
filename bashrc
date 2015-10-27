@@ -80,7 +80,7 @@ mkcd() {
   fi
 }
 
-# vw: vim a file on PATH (with TAB-completion). mneumonic: vim `whereis X`
+# vw: vim a file on PATH (with TAB-completion). mnemonic: vim `whereis X`
 function _vw_comp() {
   local cur
   cur=$(_get_cword)
@@ -151,7 +151,7 @@ p() {
     fi
 }
 
-# Grep for running processes, show full command lines. mneumonic: pgrep wide
+# Grep for running processes, show full command lines. mnemonic: pgrep wide
 pw() {
     p "$1" show_wide_command_line
 }
