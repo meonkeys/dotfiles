@@ -58,6 +58,7 @@ alias ls='ls -F --col'
 alias s='cd ..' # mnemonic: "super"
 # make a temp dir, then immediately cd into it
 alias mktd='tdir=`mktemp -d` && cd $tdir'
+alias sshnasty="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $1"
 
 # echo public IP address
 # see http://unix.stackexchange.com/questions/22615/how-can-i-get-my-external-ip-address-in-bash/81699#81699
