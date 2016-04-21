@@ -27,6 +27,8 @@ export DEBSIGN_KEYID=836F29C0
 # recently visited. See https://github.com/rupa/j2
 DIRJUMP_BASE=$HOME/git/meonkeys/j2
 export JPY=$DIRJUMP_BASE/j.py
+# force 256 colors in tmux so vim-airline looks good
+alias tmux='tmux -2'
 
 # (from Ubuntu default .bashrc)
 # make less more friendly for non-text input files, see lesspipe(1)
