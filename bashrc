@@ -167,3 +167,6 @@ if [[ -f /etc/bash_completion ]] && [[ -z "$BASH_COMPLETION" ]]; then
     source /etc/bash_completion
 fi
 source $DIRJUMP_BASE/j.sh
+
+# don't freeze on Ctrl-s . See http://unix.stackexchange.com/a/72092/8383
+stty -ixon
