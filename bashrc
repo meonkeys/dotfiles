@@ -44,7 +44,7 @@ path_prepend $HOME/bin
 
 unset path_prepend
 
-# Only do the following during an interactive prompt.
+# Only continue during interactive shell.
 # Another way to check if the shell is interactive is a [[ -t 0 ]] test, which
 # checks if file descriptor zero (stdin) is open and connected to a terminal.
 # This may be preferrable if the environment variables are not reliable.
