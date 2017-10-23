@@ -28,11 +28,14 @@ export DEBSIGN_KEYID=836F29C0
 DIRJUMP_BASE=$HOME/git/meonkeys/j2
 export JPY=$DIRJUMP_BASE/j.py
 # Paired with a [ana]cronjob to create the file, this makes `locate` work even
-# with an encrypted home dir. No-op if this file (or cronjob) is missing.
+# with an encrypted home dir. locate complains if this file is missing.
 # Found at https://askubuntu.com/questions/20821/using-locate-on-an-encrypted-partition/93477#93477
 # Example cronjob to update the file:
 #   @daily updatedb -l 0 -n '.cache .tmp' -o "$HOME/.var/locate.db"
-export LOCATE_PATH="$HOME/.var/locate.db"
+if [[ -r "$HOME/.var/locate.db" ]]
+then
+    export LOCATE_PATH="$HOME/.var/locate.db"
+fi
 # force 256 colors in tmux so vim-airline looks good
 alias tmux='tmux -2'
 
