@@ -76,36 +76,36 @@ alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # list contents right after changing directories
 cd() {
-  if [[ "$1" ]]
-  then builtin cd "$1" && ls
-  else builtin cd && ls # for cd'ing into home directory
-  fi
+    if [[ "$1" ]]
+    then builtin cd "$1" && ls
+    else builtin cd && ls # for cd'ing into home directory
+    fi
 }
 
 # make a directory, then immediately cd into it
 mkcd() {
-  if [[ "$1" ]]
-  then mkdir -p "$1" && cd "$1"
-  fi
+    if [[ "$1" ]]
+    then mkdir -p "$1" && cd "$1"
+    fi
 }
 
 # vw: vim a file on PATH (with TAB-completion). mnemonic: vim which or vim
 # whereis. I think the actual command used to be something like vim `whereis X`
 function _vw_comp() {
-  local cur
-  cur=$(_get_cword)
-  COMPREPLY=( $( compgen -c -- $cur ) )
-  return 0
+    local cur
+    cur=$(_get_cword)
+    COMPREPLY=( $( compgen -c -- $cur ) )
+    return 0
 }
 complete -F _vw_comp vw
 function vw() {
-  vim $(type -P "$@")
+    vim $(type -P "$@")
 }
 
 # Serve all files in current directory tree via HTTP.
 # See also: https://gist.github.com/meonkeys/6eaa7d87c9cea9ace557
 function http() {
-  python -m SimpleHTTPServer 8000
+    python -m SimpleHTTPServer 8000
 }
 
 # Enable tab completion for SSH hosts in Bash history
@@ -120,7 +120,7 @@ shopt -s histverify
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*|screen*)
-  PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
+    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
   ;;
 *)
   ;;
@@ -136,11 +136,11 @@ GIT_PS1_SHOWUPSTREAM=auto
 # ~ the Emotiprompt(TM) ~
 # idea came from: http://linuxgazette.net/122/lg_tips.html#tips.1
 smiley() {
-  err=$?
-  if [[ $err == 0 ]]
-  then echo ':)'
-  else echo ":( $err"
-  fi
+    err=$?
+    if [[ $err == 0 ]]
+    then echo ':)'
+    else echo ":( $err"
+    fi
 }
 PS1='$(smiley) [\u@\h \W$(__git_ps1 " <%s>")]\$ '
 
