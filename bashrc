@@ -69,6 +69,8 @@ alias ls='ls -F --col'
 alias s='cd ..' # mnemonic: "super"
 # make a temp dir, then immediately cd into it
 alias mktd='tdir=`mktemp -d` && cd $tdir'
+# https://superuser.com/questions/38984/linux-equivalent-command-for-open-command-on-mac-windows
+alias open='xdg-open'
 alias sshnasty="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 
 # echo public IP address
