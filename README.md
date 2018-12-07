@@ -17,3 +17,4 @@ To install these files on your own machine, copy them to the destination on the 
 1. `inputrc` → `~/.inputrc`
 1. `screenrc` → `~/.screenrc`
 1. `tmux.conf` → `~/.tmux.conf`
+1. `htoprc` → `~/.config/htop/htoprc`
