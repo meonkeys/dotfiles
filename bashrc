@@ -23,10 +23,7 @@ export MAIL=/var/mail/$USER
 export DEBEMAIL=haircut@gmail.com
 export DEBFULLNAME="Adam Monsen"
 export DEBSIGN_KEYID=836F29C0
-# 'j' is awesome. Use 'j PATTERN' to jump between directories you have
-# recently visited. See https://github.com/rupa/j2
-DIRJUMP_BASE=$HOME/git/meonkeys/j2
-export JPY=$DIRJUMP_BASE/j.py
+
 # Paired with a [ana]cronjob to create the file, this makes `locate` work even
 # with an encrypted home dir. locate complains if this file is missing.
 # Found at https://askubuntu.com/questions/20821/using-locate-on-an-encrypted-partition/93477#93477
@@ -177,7 +174,7 @@ pw() {
 if [[ -f /etc/bash_completion ]] && [[ -z "$BASH_COMPLETION" ]]; then
     source /etc/bash_completion
 fi
-source $DIRJUMP_BASE/j.sh
+source /usr/share/autojump/autojump.sh
 
 # don't freeze on Ctrl-s . See http://unix.stackexchange.com/a/72092/8383
 stty -ixon
