@@ -119,15 +119,6 @@ shopt -s cdspell
 # good for double-checking history substitutions
 shopt -s histverify
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*|screen*)
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
-  ;;
-*)
-  ;;
-esac
-
 # Configure Git bits in prompt. See /usr/lib/git-core/git-sh-prompt
 # or http://git-scm.com/book/en/v2/Git-in-Other-Environments-Git-in-Bash
 GIT_PS1_SHOWDIRTYSTATE=y
